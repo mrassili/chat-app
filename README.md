@@ -14,8 +14,8 @@ Other:
 
 ## Tools & Libraries
 
-- [React](reactjs.org): JavaScript library for building user interfaces
-- [Redux](redux.js.org): State management library for JavaScript apps
-- [NPM](npmjs.com): JavaScript package manager
-- [ESLint](eslint.org): JavaScript and JSX code style
-- [Netlify](netlify.com): static site host
+- [React](https://reactjs.org): JavaScript library for building user interfaces
+- [Redux](https://redux.js.org): State management library for JavaScript apps
+- [NPM](https://npmjs.com): JavaScript package manager
+- [ESLint](https://eslint.org): JavaScript and JSX code style
+- [Netlify](https://netlify.com): static site host
