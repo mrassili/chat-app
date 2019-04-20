@@ -2,8 +2,7 @@
   display: inline-block;
   margin: 1em auto;
   padding: 1em;
-  /* background-color: aquamarine; */
-  border-radius: 10px;
+  border-radius: 30px;
   max-width: calc(100% - 5em);
   vertical-align: middle;
   background: linear-gradient(217deg, rgb(1, 252, 168), aquamarine);

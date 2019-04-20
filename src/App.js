@@ -1,8 +1,8 @@
 import React, { Component } from "react"
-import UsersList from "./UsersList"
-import ChatWindow from "./ChatWindow"
-import NewMessage from "./NewMessage"
-import MessageBubble from "./MessageBubble"
+import UsersList from "./components/UsersList"
+import ChatWindow from "./components/ChatWindow"
+import NewMessage from "./components/NewMessage"
+import MessageBubble from "./components/MessageBubble"
 import "./reset.css"
 import "./App.css"
 
