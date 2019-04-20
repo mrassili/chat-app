@@ -18,7 +18,7 @@ module.exports = {
     "prettier",
     "prettier/react",
   ],
-  plugins: ["react", "jsx-a11y", "import", "node", "promise"],
+  plugins: ["react", "jsx-a11y", "import", "promise"],
   rules: {
     "no-console": "warn",
 

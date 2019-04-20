@@ -1,5 +1,5 @@
 .input {
-  width: 100%;
+  width: 80%;
   height: auto;
   cursor: auto;
   padding: 2em;
@@ -21,4 +21,26 @@
   height: 3px;
   color: #00379f;
   background: #00379f;
+}
+
+.box {
+  /* border: 2px solid black; */
+}
+
+.send-btn {
+  width: 10%;
+  padding: 0.5em;
+  font-size: 1em;
+  color: #00379f;
+  background: white;
+  border-radius: 4em;
+  border: 2px solid #00379f;
+  text-transform: uppercase;
+  transition: color 0.5s ease, background 0.5s ease;
+}
+
+.send-btn:hover {
+  color: white;
+  background: #00379f;
+  transition: all 0.5s ease;
 }
