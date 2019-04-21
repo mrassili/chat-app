@@ -5,6 +5,8 @@ import { createStore } from "redux"
 import { Provider } from "react-redux"
 import chat from "./rootReducer"
 
+import "focus-visible/dist/focus-visible.js"
+
 const store = createStore(
   chat,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),

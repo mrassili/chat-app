@@ -1,13 +1,31 @@
 import React from "react"
+import MessageBubble from "./MessageBubble"
 import styles from "./ChatWindow.module.css"
+import { connect } from "react-redux"
 
-const ChatWindow = (props) => {
-  return (
-    <section className={styles["chat-window"]}>
-      <h2 className={styles["messages-h2"]}>&nbsp;Chat Messages</h2>
-      {props.children}
-    </section>
-  )
+class ChatWindow extends React.Component {
+  // subscribe to messages
+  // render a MessageBubble every time a new message arrives
+
+  componentDidUpdate() {}
+
+  render() {
+    return (
+      <section className={styles["chat-window"]}>
+        <h2 className={styles["messages-h2"]}>&nbsp;Chat Messages</h2>
+        {this.props.messages.map((message) => (
+          <MessageBubble message={message.text} key={message.id} />
+        ))}
+      </section>
+    )
+  }
 }
 
-export default ChatWindow
+const mapStateToProps = ({ messages }) => ({
+  messages,
+})
+
+export default connect(
+  mapStateToProps,
+  null,
+)(ChatWindow)

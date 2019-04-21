@@ -23,7 +23,7 @@ const MessageBubble = (props) => {
     <>
       <div className={styles["message-banner"]}>
         <Sender />
-        <span className={styles.bubble}>{props.children}</span>
+        <span className={styles.bubble}>{props.message}</span>
       </div>
     </>
   )
