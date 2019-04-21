@@ -31,3 +31,15 @@
   z-index: 5;
   border-top-right-radius: 10px;
 }
+
+.unread {
+  font-size: 0.5em;
+  text-transform: uppercase;
+  color: aquamarine;
+  /* position to the right */
+  position: absolute;
+  right: 1em;
+  /* center vertically */
+  top: 50%;
+  transform: translateY(-50%);
+}

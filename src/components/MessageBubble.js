@@ -24,7 +24,6 @@ const MessageBubble = (props) => {
       <div className={styles["message-banner"]}>
         <Sender />
         <span className={styles.bubble}>{props.message}</span>
-        {/* move to chatWindow render method */}
       </div>
     </>
   )

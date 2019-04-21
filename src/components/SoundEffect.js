@@ -1,5 +1,5 @@
 import React from "react"
-import tone from "./digi_plink.wav"
+import tone from "../assets/digi_plink.wav"
 
 class SoundEffect extends React.Component {
   constructor(props) {

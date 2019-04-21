@@ -6,7 +6,5 @@
   max-width: calc(100% - 5em);
   vertical-align: middle;
   background: linear-gradient(217deg, rgb(1, 252, 168), aquamarine);
-}
-
-.message-banner {
+  word-break: break-word;
 }

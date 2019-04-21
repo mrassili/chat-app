@@ -15,6 +15,10 @@ class NewMessage extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.inputRef.current.focus()
+  }
+
   handleInput = (e) => {
     this.setState({ input: e.target.value })
   }
