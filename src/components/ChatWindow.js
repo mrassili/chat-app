@@ -13,9 +13,9 @@ class ChatWindow extends React.Component {
     return (
       <section className={styles["chat-window"]}>
         <h2 className={styles["messages-h2"]}>&nbsp;Chat Messages</h2>
-        {this.props.messages.map((message) => (
-          <MessageBubble message={message.text} key={message.id} />
-        ))}
+        {this.props.messages.map((message) => {
+          return <MessageBubble message={message.text} key={message.id} />
+        })}
       </section>
     )
   }
