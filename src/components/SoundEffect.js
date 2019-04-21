@@ -7,7 +7,7 @@ class SoundEffect extends React.Component {
     this.audioRef = React.createRef()
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
     this.play()
   }
 

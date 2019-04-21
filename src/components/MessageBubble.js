@@ -1,5 +1,4 @@
 import React from "react"
-import SoundEffect from "./SoundEffect"
 import styles from "./MessageBubble.module.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -26,7 +25,6 @@ const MessageBubble = (props) => {
         <Sender />
         <span className={styles.bubble}>{props.message}</span>
         {/* move to chatWindow render method */}
-        <SoundEffect />
       </div>
     </>
   )

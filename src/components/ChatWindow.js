@@ -1,14 +1,10 @@
 import React from "react"
 import MessageBubble from "./MessageBubble"
+import SoundEffect from "./SoundEffect"
 import styles from "./ChatWindow.module.css"
 import { connect } from "react-redux"
 
 class ChatWindow extends React.Component {
-  // subscribe to messages
-  // render a MessageBubble every time a new message arrives
-
-  componentDidUpdate() {}
-
   render() {
     return (
       <section className={styles["chat-window"]}>
@@ -16,6 +12,7 @@ class ChatWindow extends React.Component {
         {this.props.messages.map((message) => {
           return <MessageBubble message={message.text} key={message.id} />
         })}
+        <SoundEffect />
       </section>
     )
   }
