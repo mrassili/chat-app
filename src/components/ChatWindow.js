@@ -4,6 +4,26 @@ import SoundEffect from "./SoundEffect"
 import styles from "./ChatWindow.module.css"
 import { connect } from "react-redux"
 
+const NotificationBubble = (props) => {
+  return (
+    <span
+      style={{
+        border: "1px solid white",
+        borderRadius: "20px",
+        fontSize: ".5em",
+        padding: ".1em .4em",
+        marginLeft: "-.45em",
+        verticalAlign: "top",
+        color: "#00379f",
+        backgroundColor: "white",
+        fontWeight: "700",
+      }}
+    >
+      {props.unreadMessages}
+    </span>
+  )
+}
+
 class ChatWindow extends React.Component {
   constructor(props) {
     super(props)
@@ -15,6 +35,10 @@ class ChatWindow extends React.Component {
   scrollIsPinnedToBottom = () => {
     const { scrollHeight, clientHeight, scrollTop } = this.chatWindowRef.current
     return scrollHeight === clientHeight + scrollTop
+  }
+
+  componentDidMount() {
+    this.scrollToBottom()
   }
 
   getSnapshotBeforeUpdate() {
@@ -58,9 +82,7 @@ class ChatWindow extends React.Component {
         <h2 className={styles["messages-h2"]}>
           &nbsp;Chat Messages
           {Boolean(this.unreadMessages) && (
-            <span className={styles.unread}>
-              {this.unreadMessages} Unread Messages
-            </span>
+            <NotificationBubble unreadMessages={this.unreadMessages} />
           )}
         </h2>
         {this.props.messages.map((message) => {
