@@ -3,6 +3,8 @@ import MessageBubble from "./MessageBubble"
 import SoundEffect from "./SoundEffect"
 import styles from "./ChatWindow.module.css"
 import { connect } from "react-redux"
+import { TransitionGroup, CSSTransition } from "react-transition-group"
+import "animate.css"
 
 const NotificationBubble = (props) => {
   return (
@@ -85,9 +87,22 @@ class ChatWindow extends React.Component {
             <NotificationBubble unreadMessages={this.unreadMessages} />
           )}
         </h2>
+      <TransitionGroup className="todo-list">
         {this.props.messages.map((message) => {
-          return <MessageBubble message={message.text} key={message.id} />
+          return (
+            <CSSTransition
+              timeout={400}
+              classNames={{
+                enter: 'animated faster',
+                enterActive: 'bounceInLeft'
+              }}
+              key={message.id}
+            >
+              <MessageBubble message={message.text} />
+            </CSSTransition>
+          )
         })}
+      </TransitionGroup>
         <SoundEffect />
       </section>
     )

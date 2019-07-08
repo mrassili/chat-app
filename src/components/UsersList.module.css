@@ -15,10 +15,23 @@
 .user {
   list-style-type: none;
   padding: 1em;
+  padding-left: 0;
   cursor: default;
+  position: relative;
 }
 
 .user > svg {
   font-size: 35px;
   vertical-align: middle;
+  margin-left: 1rem;
+}
+
+.activeUser::before {
+  content: "";
+  display: inline-block;
+  background-color: #42a5f5;
+  width: 5px;
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
 }

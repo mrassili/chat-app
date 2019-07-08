@@ -2,7 +2,7 @@ import React from "react"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons"
-
+import classNames from "classnames"
 import styles from "./UsersList.module.css"
 
 const UsersList = () => {
@@ -11,39 +11,39 @@ const UsersList = () => {
       <h2 className={styles["users-h2"]}>&nbsp;Users</h2>
       <li className={styles.user}>
         <FontAwesomeIcon icon={faUserCircle} />
-        &nbsp; User 1
+        &nbsp; Marcas Durnin
       </li>
       <li className={styles.user}>
         <FontAwesomeIcon icon={faUserCircle} />
-        &nbsp; User 2
+        &nbsp; Yahya Wirner
       </li>
       <li className={styles.user}>
         <FontAwesomeIcon icon={faUserCircle} />
-        &nbsp; User 3
+        &nbsp; Zacharias Ivanov
+      </li>
+      <li className={classNames(styles.user, styles.activeUser)}>
+        <FontAwesomeIcon icon={faUserCircle} />
+        &nbsp; Zsuzsanna Pololáník
       </li>
       <li className={styles.user}>
         <FontAwesomeIcon icon={faUserCircle} />
-        &nbsp; User 4
+        &nbsp; Vladimíra Zanetti
       </li>
       <li className={styles.user}>
         <FontAwesomeIcon icon={faUserCircle} />
-        &nbsp; User 5
+        &nbsp; Katja Gang
       </li>
       <li className={styles.user}>
         <FontAwesomeIcon icon={faUserCircle} />
-        &nbsp; User 6
+        &nbsp; Cadmus Medved
       </li>
       <li className={styles.user}>
         <FontAwesomeIcon icon={faUserCircle} />
-        &nbsp; User 7
+        &nbsp; Ariston Zahradník
       </li>
       <li className={styles.user}>
         <FontAwesomeIcon icon={faUserCircle} />
-        &nbsp; User 8
-      </li>
-      <li className={styles.user}>
-        <FontAwesomeIcon icon={faUserCircle} />
-        &nbsp; User 9
+        &nbsp; Anka Traylor
       </li>
     </aside>
   )

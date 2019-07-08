@@ -7,7 +7,8 @@
     "@fortawesome/free-regular-svg-icons": "^5.8.1",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "animate.css": "^3.7.0",
+    "animate.css": "^3.7.2",
+    "classnames": "^2.2.6",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
@@ -18,7 +19,7 @@
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.2",
     "react-scripts": "2.1.8",
-    "react-transition-group": "^4.0.0",
+    "react-transition-group": "^4.2.0",
     "redux": "^4.0.1"
   },
   "scripts": {
