@@ -5,6 +5,7 @@ import styles from "./ChatWindow.module.css"
 import { connect } from "react-redux"
 import { TransitionGroup, CSSTransition } from "react-transition-group"
 import "animate.css"
+import { subscribeToMessages } from "../actions"
 
 const NotificationBubble = (props) => {
   return (
@@ -41,6 +42,8 @@ class ChatWindow extends React.Component {
 
   componentDidMount() {
     this.scrollToBottom()
+
+    this.props.subscribeToMessages()
   }
 
   getSnapshotBeforeUpdate() {
@@ -61,10 +64,11 @@ class ChatWindow extends React.Component {
   }
 
   scrollToBottom = () => {
-    // scrollHeight = clientHeight + scrollTop
-    // true if scroll is pinned to the bottom of the element
-    const { scrollHeight, clientHeight } = this.chatWindowRef.current
-    this.chatWindowRef.current.scrollTop = scrollHeight - clientHeight
+    const { scrollHeight } = this.chatWindowRef.current
+    this.chatWindowRef.current.scrollTo({
+      top: scrollHeight,
+      behavior: "smooth",
+    })
     this.unreadMessages = 0
   }
 
@@ -87,22 +91,22 @@ class ChatWindow extends React.Component {
             <NotificationBubble unreadMessages={this.unreadMessages} />
           )}
         </h2>
-      <TransitionGroup className="todo-list">
-        {this.props.messages.map((message) => {
-          return (
-            <CSSTransition
-              timeout={400}
-              classNames={{
-                enter: 'animated faster',
-                enterActive: 'bounceInLeft'
-              }}
-              key={message.id}
-            >
-              <MessageBubble message={message.text} />
-            </CSSTransition>
-          )
-        })}
-      </TransitionGroup>
+        <TransitionGroup className="todo-list">
+          {this.props.messages.map((message) => {
+            return (
+              <CSSTransition
+                timeout={400}
+                classNames={{
+                  enter: "animated faster",
+                  enterActive: "slideInUp",
+                }}
+                key={message.id}
+              >
+                <MessageBubble message={message.content} />
+              </CSSTransition>
+            )
+          })}
+        </TransitionGroup>
         <SoundEffect />
       </section>
     )
@@ -115,5 +119,5 @@ const mapStateToProps = ({ messages }) => ({
 
 export default connect(
   mapStateToProps,
-  null,
+  {subscribeToMessages},
 )(ChatWindow)

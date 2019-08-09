@@ -2,8 +2,9 @@ import React from "react"
 import styles from "./NewMessage.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons"
-import { connect } from "react-redux"
-import { addMessage } from "../actions"
+import db from "../firebase"
+
+const messagesRef = db.ref("messages/")
 
 class NewMessage extends React.Component {
   constructor(props) {
@@ -24,7 +25,17 @@ class NewMessage extends React.Component {
   }
 
   handleSend = () => {
-    this.state.input && this.props.addMessage(this.state.input)
+    /*  flow logic:
+     *  on submit, save the message on the db
+     *  update ui state to reflect the new message
+     *  *on a global level*, set a .on listener to update 
+     *  state whenever a message (from another user)
+     *  was added
+     */
+    if (!this.state.input) {return }
+    messagesRef.push({
+      content: this.state.input
+    })
     this.setState({ input: "" })
     this.inputRef.current.focus()
   }
@@ -60,7 +71,4 @@ class NewMessage extends React.Component {
   }
 }
 
-export default connect(
-  null,
-  { addMessage },
-)(NewMessage)
+export default NewMessage

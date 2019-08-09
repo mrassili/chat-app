@@ -13,6 +13,7 @@
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-promise": "^4.1.1",
+    "firebase": "^6.3.5",
     "focus-visible": "^4.1.5",
     "prettier": "^1.17.0",
     "react": "^16.8.6",
@@ -20,7 +21,8 @@
     "react-redux": "^7.0.2",
     "react-scripts": "2.1.8",
     "react-transition-group": "^4.2.0",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

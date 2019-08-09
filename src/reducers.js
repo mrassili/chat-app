@@ -1,7 +1,9 @@
+// the reducer holds the state structure which is the returned (new) state
+
 export const messages = (state = [], action) => {
   switch (action.type) {
     case "ADD_MESSAGE":
-      return state.concat({ text: action.message, id: action.id })
+      return state.concat({content: action.content, id: action.id})
     default:
       return state
   }
