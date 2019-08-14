@@ -1,5 +1,6 @@
 import React from "react"
 import MessageBubble from "./MessageBubble"
+import FloatingButton from "./FloatingButton"
 import SoundEffect from "./SoundEffect"
 import styles from "./ChatWindow.module.css"
 import { connect } from "react-redux"
@@ -31,6 +32,9 @@ class ChatWindow extends React.Component {
   constructor(props) {
     super(props)
     this.chatWindowRef = React.createRef()
+    this.state = {
+      newMessages: false
+    }
   }
 
   unreadMessages = 0
@@ -85,13 +89,27 @@ class ChatWindow extends React.Component {
         ref={this.chatWindowRef}
         onScroll={this.handleScroll}
       >
-        <h2 className={styles["messages-h2"]}>
-          &nbsp;Chat Messages
-          {Boolean(this.unreadMessages) && (
-            <NotificationBubble unreadMessages={this.unreadMessages} />
-          )}
-        </h2>
-        <TransitionGroup className="todo-list">
+        <h2 className={styles["messages-h2"]}>&nbsp;Chat Messages</h2>
+
+        <CSSTransition
+          in={this.state.newMessages}
+          timeout={300}
+          unmountOnExit
+          classNames={{
+            enter: "animated faster",
+            enterActive: "fadeInDown",
+            exit: "animated faster",
+            exitActive: "fadeOutUp",
+          }}
+        >
+          <FloatingButton
+            text="New Messages"
+            unreadMessages={this.unreadMessages}
+            handleScroll={this.scrollToBottom}
+          />
+        </CSSTransition>
+
+        <TransitionGroup>
           {this.props.messages.map((message) => {
             return (
               <CSSTransition
@@ -119,5 +137,5 @@ const mapStateToProps = ({ messages }) => ({
 
 export default connect(
   mapStateToProps,
-  {subscribeToMessages},
+  { subscribeToMessages },
 )(ChatWindow)
